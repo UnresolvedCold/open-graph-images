@@ -116,6 +116,7 @@ export default async function handler(req: NextRequest) {
               fontWeight: "700",
               flexWrap: "wrap",
               justifyContent: "center",
+              alignItems: "center",
               padding: "0 3rem",
               flex: "2",
               height: "100%"
