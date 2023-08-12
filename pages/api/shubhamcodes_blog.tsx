@@ -6,10 +6,10 @@ export const config = {
 };
 
 const regular = fetch(new URL("../../assets/Inter-Regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());
-const bold = fetch(new URL("../../assets/Inter-Bold.ttf", import.meta.url)).then((res) => res.arrayBuffer());
+// const bold = fetch(new URL("../../assets/Inter-Bold.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 export default async function handler(req: NextRequest) {
   const InterRegular = await regular;
-  const InterBold = await bold;
+  const InterBold = InterRegular;
 
   const { searchParams } = req.nextUrl;
   const title = searchParams.get("title");
