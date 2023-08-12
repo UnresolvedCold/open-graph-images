@@ -2,7 +2,7 @@ import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
 const regular = fetch(new URL("../../assets/Inter-Regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());

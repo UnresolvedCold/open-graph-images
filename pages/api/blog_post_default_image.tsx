@@ -2,7 +2,7 @@ import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
 function getAbstractColor(title:string) {
@@ -27,12 +27,6 @@ function getAbstractColor(title:string) {
 
   return `linear-gradient(45deg, ${hex_beg} 0%, ${hex_end} 100%)`;
 }
-
-const title = "example title";
-const color = getAbstractColor(title);
-console.log("Title:", title);
-console.log("Hex Color:", color);
-
 
 const regular = fetch(new URL("../../assets/Inter-Regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 const bold = fetch(new URL("../../assets/Inter-Bold.ttf", import.meta.url)).then((res) => res.arrayBuffer());
