@@ -6,6 +6,35 @@ export const config = {
   runtime: "experimental-edge",
 };
 
+function getAbstractColor(title:string) {
+  let sum = 0;
+  for (let i = 0; i < title.length; i++) {
+    sum += title.charCodeAt(i);
+  }
+
+  // Calculate RGB values based on the sum
+  const r = (sum * 13) % 256;
+  const g = (sum * 17) % 256;
+  const b = (sum * 19) % 256;
+
+  // Convert RGB values to hex
+  const hex_beg = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+
+  const r2 = (sum * 23) % 256;
+  const g2 = (sum * 37) % 256;
+  const b2 = (sum * 43) % 256;
+
+  const hex_end = `#${r2.toString(16).padStart(2, '0')}${g2.toString(16).padStart(2, '0')}${b2.toString(16).padStart(2, '0')}`;
+
+  return `linear-gradient(45deg, ${hex_beg} 0%, ${hex_end} 100%)`;
+}
+
+const title = "example title";
+const color = getAbstractColor(title);
+console.log("Title:", title);
+console.log("Hex Color:", color);
+
+
 const regular = fetch(new URL("../../assets/Inter-Regular.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 const bold = fetch(new URL("../../assets/Inter-Bold.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 export default async function handler(req: NextRequest) {
@@ -95,7 +124,7 @@ export default async function handler(req: NextRequest) {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          backgroundColor: "#101218",
+          background: `${getAbstractColor(title)}`,
         }}
       >
    <div
