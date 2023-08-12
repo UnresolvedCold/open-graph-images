@@ -30,11 +30,11 @@ export default function Home() {
             Get started by generating an Open Graph image down below.
           </p>
           <div className="grid sm:grid-cols-2 gap-5">
-            <a href="/api/lanceross?title=Your+Title+Here" className={`umami--click--main-template ${cardClasses}`}>
+            <a href="/api/shubhamcodes_blog?title=Your+Title+Here" className={`umami--click--main-template ${cardClasses}`}>
               <h2 className="text-xl sm:text-2xl mt-1 mb-3">Main Template</h2>
               <p>This OG Image template is what I use for my personal website.</p>
             </a>
-            <a href="/api/old?title=Your+Title+Here" className={`umami--click--old-template ${cardClasses}`}>
+            <a href="/api/blog_post_default_image?title=Your+Title+Here" className={`umami--click--old-template ${cardClasses}`}>
               <h2 className="text-xl sm:text-2xl mt-1 mb-3">Old Template</h2>
               <p>This is my old template with I still use Netlify Edge Functions.</p>
             </a>
